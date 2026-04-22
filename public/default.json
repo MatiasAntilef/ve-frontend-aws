@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "fileName": "entrevista_cliente.mp4",
+      "createdAt": "2026-04-18T10:00:00Z",
+      "screenshot": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    },
+    {
+      "id": "2",
+      "fileName": "tutorial_angular.mov",
+      "createdAt": "2026-04-17T15:30:00Z",
+      "screenshot": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    },
+    {
+      "id": "3",
+      "fileName": "demo_producto.webm",
+      "createdAt": "2026-04-16T09:45:00Z",
+      "screenshot": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    },
+    {
+      "id": "4",
+      "fileName": "evento_empresa.mp4",
+      "createdAt": "2026-04-15T20:10:00Z",
+      "screenshot": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    }
+  ]
+}

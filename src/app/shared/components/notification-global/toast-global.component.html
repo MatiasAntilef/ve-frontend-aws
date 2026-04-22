@@ -1,0 +1,76 @@
+@if (visible) {
+  <div class="fixed top-4 right-4 z-50">
+    <div
+      class="w-96 max-w-[calc(100vw-2rem)] rounded-xl border border-base-300 bg-base-100 shadow-xl animate-toast-in overflow-hidden"
+    >
+      <div class="flex items-start gap-3 p-4">
+        <div
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+          [class.bg-success/10]="type === 'success'"
+          [class.text-success]="type === 'success'"
+          [class.bg-error/10]="type === 'error'"
+          [class.text-error]="type === 'error'"
+          [class.bg-info/10]="type === 'info'"
+          [class.text-info]="type === 'info'"
+          [class.bg-warning/10]="type === 'warning'"
+          [class.text-warning]="type === 'warning'"
+        >
+          @switch (type) {
+            @case ('success') {
+              ✔
+            }
+            @case ('error') {
+              ✕
+            }
+            @case ('warning') {
+              ⚠
+            }
+            @default {
+              i
+            }
+          }
+        </div>
+
+        <div class="flex-1">
+          <p class="text-sm font-semibold">
+            @switch (type) {
+              @case ('success') {
+                Éxito
+              }
+              @case ('error') {
+                Error
+              }
+              @case ('warning') {
+                Advertencia
+              }
+              @default {
+                Info
+              }
+            }
+          </p>
+
+          <p class="text-sm text-base-content/70">
+            {{ message }}
+          </p>
+        </div>
+
+        <button
+          class="btn btn-ghost btn-xs btn-circle opacity-60 hover:opacity-100"
+          (click)="hide()"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="h-0.5 w-full bg-base-200">
+        <div
+          class="h-full animate-toast-progress"
+          [class.bg-success]="type === 'success'"
+          [class.bg-error]="type === 'error'"
+          [class.bg-info]="type === 'info'"
+          [class.bg-warning]="type === 'warning'"
+        ></div>
+      </div>
+    </div>
+  </div>
+}
