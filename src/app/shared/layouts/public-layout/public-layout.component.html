@@ -1,0 +1,48 @@
+<nav
+  class="navbar rounded-box flex w-full items-center justify-between gap-2 shadow-base-300/20 shadow-sm"
+>
+  <div class="navbar-start max-md:w-1/4">
+    <a class="link text-base-content link-neutral text-xl font-bold no-underline" routerLink="/">
+      VE-Frontend
+    </a>
+  </div>
+  <div class="navbar-center max-md:hidden">
+    <ul class="menu menu-horizontal p-0 font-medium">
+      <li><a routerLink="/landing">Inicio</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end items-center gap-4">
+    <div class="relative md:hidden">
+      <button
+        id="mobile-nav-menu"
+        type="button"
+        class="btn btn-text btn-secondary btn-square"
+        aria-haspopup="menu"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-label="Abrir menu"
+        (click)="toggleMobileMenu()"
+      >
+        <span class="icon-[tabler--menu-2] size-5" [class.hidden]="isMobileMenuOpen()"></span>
+        <span class="icon-[tabler--x] size-5" [class.hidden]="!isMobileMenuOpen()"></span>
+      </button>
+
+      @if (isMobileMenuOpen()) {
+        <ul
+          class="menu rounded-box bg-base-100 absolute right-0 top-full z-50 mt-2 min-w-60 border border-base-300 p-2 shadow-lg"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="mobile-nav-menu"
+        >
+          <li><a (click)="closeMobileMenu()" routerLink="/landing">Inicio</a></li>
+        </ul>
+      }
+    </div>
+    <!-- <button (click)="login()" class="btn max-md:btn-square btn-primary">
+      <span class="max-md:hidden">Iniciar sesión</span>
+      <span class="icon-[tabler--arrow-right] rtl:rotate-180"></span>
+    </button> -->
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
