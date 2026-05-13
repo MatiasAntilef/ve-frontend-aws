@@ -7,17 +7,22 @@ import { IResListVideo } from '@core/services/videos/models/get-videos.model';
   selector: 'app-dashboard',
   imports: [VideoCardComponent],
   templateUrl: './dashboard.component.html',
+  standalone: true,
 })
 export class DashboardComponent {
   constructor(private videoService: VideoService) {
     this.getVideos();
   }
 
-  $videos = signal<IResListVideo[]>([]);
+  $videos = signal<IResListVideo[]>([]); 
+
+ 
 
   async getVideos() {
     const res = await this.videoService.getVideos();
     this.$videos.set(res.items);
     console.log(this.$videos());
   }
+
+
 }
